@@ -1,0 +1,153 @@
+import { LostItem } from '../types';
+
+export const CMU_LOCATIONS = [
+  'หอสมุดกลาง มช.',
+  'โรงอาหารกลาง (ศาลาอ่าน)',
+  'ตึกเรียนรวม (RB)',
+  'หอพักนักศึกษา',
+  'สนามกีฬา มช.',
+  'คณะวิศวกรรมศาสตร์',
+  'คณะวิทยาศาสตร์',
+  'คณะมนุษยศาสตร์',
+  'ระบุเอง'
+] as const;
+
+export const CATEGORIES = [
+  'ทั้งหมด',
+  'กระเป๋า',
+  'บัตร/เอกสาร',
+  'อิเล็กทรอนิกส์',
+  'เสื้อผ้า',
+  'อื่นๆ'
+] as const;
+
+export const INITIAL_LOST_ITEMS: LostItem[] = [
+  {
+    id: 'cmu-item-001',
+    title: 'หูฟัง AirPods Pro เคสสีขาว',
+    category: 'อิเล็กทรอนิกส์',
+    location: 'หอสมุดกลาง มช.',
+    specificLocation: 'ชั้น 2 โซนอ่านหนังสือเงียบ โต๊ะริมหน้าต่าง',
+    foundDateTime: '17 ก.ย. 2026, 14:20 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=600&auto=format&fit=crop&q=80',
+    description: 'เคสสีขาว มีสติกเกอร์ช้าง มช. ด้านหลัง ตัวหูฟังครบสองข้าง สภาพสมบูรณ์ แบตเตอรี่ยังมี',
+    contact: '081-987-6543',
+    contactType: 'phone',
+    status: 'available',
+    aiSimilarityScore: 96,
+    matchedFeatures: ['เคสหูฟังบลูทูธสีขาว', 'สติกเกอร์ลายช้าง', 'สภาพใหม่'],
+    depositPoint: 'เคาน์เตอร์บริการ ชั้น 1 หอสมุดกลาง มช.'
+  },
+  {
+    id: 'cmu-item-002',
+    title: 'บัตรนักศึกษา มช. และบัตรคีย์การ์ด',
+    category: 'บัตร/เอกสาร',
+    location: 'โรงอาหารกลาง (ศาลาอ่าน)',
+    specificLocation: 'โต๊ะกินข้าวแถวกลาง ใกล้ร้านน้ำผลไม้ปั่น',
+    foundDateTime: '17 ก.ย. 2026, 12:45 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80',
+    description: 'บัตรประจำตัวนักศึกษา มช. คณะวิศวกรรมศาสตร์ รหัส 650610xxx พร้อมซองใส่บัตรสีน้ำเงินและคีย์การ์ดหอพัก',
+    contact: 'line: cmu_saladiner',
+    contactType: 'line',
+    status: 'available',
+    aiSimilarityScore: 92,
+    matchedFeatures: ['บัตรประจำตัวนักศึกษา', 'ซองบัตรสีน้ำเงิน', 'คีย์การ์ดหอพัก'],
+    depositPoint: 'ป้อมเจ้าหน้าที่ รปภ. ประจำโรงอาหารกลาง'
+  },
+  {
+    id: 'cmu-item-003',
+    title: 'กระเป๋าสตางค์หนังสีน้ำตาลเข้ม',
+    category: 'กระเป๋า',
+    location: 'หอสมุดกลาง มช.',
+    specificLocation: 'ชั้น 1 มุมสืบค้นข้อมูลคอมพิวเตอร์',
+    foundDateTime: '17 ก.ย. 2026, 10:15 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&auto=format&fit=crop&q=80',
+    description: 'กระเป๋าสตางค์พับสองตอน ยี่ห้อหนังแท้ ภายในมีเงินสดเล็กน้อยและบัตรประชาชน',
+    contact: '084-321-0987',
+    contactType: 'phone',
+    status: 'available',
+    aiSimilarityScore: 89,
+    matchedFeatures: ['กระเป๋าหนังสีน้ำตาล', 'ทรงพับสองตอน', 'รอยขูดขีดมุมล่าง'],
+    depositPoint: 'เคาน์เตอร์บริการ ชั้น 1 หอสมุดกลาง มช.'
+  },
+  {
+    id: 'cmu-item-004',
+    title: 'เสื้อกันหนาวมีฮู้ด สีกรมท่า',
+    category: 'เสื้อผ้า',
+    location: 'หอสมุดกลาง มช.',
+    specificLocation: 'ชั้น 3 หน้าห้องมัลติมีเดีย เก้าอี้เบาะเดี่ยว',
+    foundDateTime: '16 ก.ย. 2026, 18:30 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=80',
+    description: 'เสื้อกันหนาวสีกรมท่า ปักตัวอักษร CMU สีขาวที่อกซ้าย ไซซ์ L มีซิปหน้า',
+    contact: 'line: library_cmu',
+    contactType: 'line',
+    status: 'available',
+    aiSimilarityScore: 85,
+    matchedFeatures: ['เสื้อฮู้ดสีกรมท่า', 'งานปักอักษร CMU', 'ไซซ์ L'],
+    depositPoint: 'จุดรับฝากของ หอสมุดกลาง มช.'
+  },
+  {
+    id: 'cmu-item-005',
+    title: 'ไอแพด แอร์ พร้อมเคสแม่เหล็กสีดำ',
+    category: 'อิเล็กทรอนิกส์',
+    location: 'โรงอาหารกลาง (ศาลาอ่าน)',
+    specificLocation: 'ที่นั่งฝั่งติดลานจอดรถจักรยานยนต์',
+    foundDateTime: '16 ก.ย. 2026, 13:10 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
+    description: 'iPad Air สี Space Gray มี Apple Pencil ติดอยู่ที่ขอบด้านบน หน้าจอล็อครหัส',
+    contact: '089-112-2334',
+    contactType: 'phone',
+    status: 'available',
+    aiSimilarityScore: 94,
+    matchedFeatures: ['แท็บเล็ต iPad สีเทา', 'เคสพับสีดำ', 'ปากกาสไตลัส'],
+    depositPoint: 'ห้องประชาสัมพันธ์ โรงอาหารกลาง (ศาลาอ่าน)'
+  },
+  {
+    id: 'cmu-item-006',
+    title: 'ร่มพับยูวี สีม่วง มช.',
+    category: 'อื่นๆ',
+    location: 'หอสมุดกลาง มช.',
+    specificLocation: 'ที่วางร่มหน้าประตูกระจกทางเข้าหลัก',
+    foundDateTime: '16 ก.ย. 2026, 11:00 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=600&auto=format&fit=crop&q=80',
+    description: 'ร่มพับสามตอนสีม่วง ด้านในเคลือบกันรังสียูวีสีดำ ด้ามจับพลาสติกสีดำ',
+    contact: '082-555-8899',
+    contactType: 'phone',
+    status: 'available',
+    aiSimilarityScore: 78,
+    matchedFeatures: ['ร่มพับสามตอน', 'ผ้าสีม่วง', 'ด้ามจับกลม'],
+    depositPoint: 'เคาน์เตอร์บริการ ชั้น 1 หอสมุดกลาง มช.'
+  },
+  {
+    id: 'cmu-item-007',
+    title: 'แว่นสายตากรอบโลหะสีเงิน ทรงหยดน้ำ',
+    category: 'อื่นๆ',
+    location: 'ตึกเรียนรวม (RB)',
+    specificLocation: 'ห้องบรรยาย RB5 ชั้น 2 แถวที่ 4 จากด้านหน้า',
+    foundDateTime: '15 ก.ย. 2026, 16:40 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&auto=format&fit=crop&q=80',
+    description: 'กรอบแว่นน้ำหนักเบา เลนส์ใส พร้อมกล่องใส่แว่นหนังเทียมสีเทา',
+    contact: '086-777-1234',
+    contactType: 'phone',
+    status: 'available',
+    aiSimilarityScore: 82,
+    matchedFeatures: ['แว่นสายตากรอบเงิน', 'ทรงหยดน้ำ', 'กล่องแว่นสีเทา'],
+    depositPoint: 'ห้องธุรการ ตึกเรียนรวม RB5'
+  },
+  {
+    id: 'cmu-item-008',
+    title: 'กระบอกน้ำเก็บความเย็น สีเขียวมะกอก',
+    category: 'อื่นๆ',
+    location: 'โรงอาหารกลาง (ศาลาอ่าน)',
+    specificLocation: 'บนโต๊ะม้าหินอ่อนด้านนอกศาลาอ่าน',
+    foundDateTime: '15 ก.ย. 2026, 14:00 น.',
+    imageUrl: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&auto=format&fit=crop&q=80',
+    description: 'กระบอกน้ำสุญญากาศขนาด 24 ออนซ์ ฝาเกลียวสีดำ มีรอยบุบเล็กน้อยที่ก้นขวด',
+    contact: 'line: angkeaw_canteen',
+    contactType: 'line',
+    status: 'available',
+    aiSimilarityScore: 75,
+    matchedFeatures: ['กระบอกน้ำสแตนเลส', 'สีเขียวมะกอก', 'ฝาเกลียว'],
+    depositPoint: 'ป้อมเจ้าหน้าที่ รปภ. ประจำโรงอาหารกลาง'
+  }
+];
